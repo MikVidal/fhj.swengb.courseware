@@ -1,2 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="391.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fhj.swengb.courseware.CoursewareAppController">
+   <children>
+      <BorderPane layoutX="7.0" layoutY="14.0" prefHeight="377.0" prefWidth="867.0">
+         <left>
+            <TableView prefHeight="299.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="Tables" prefWidth="199.00003051757812" text="Tables" />
+              </columns>
+            </TableView>
+         </left>
+         <center>
+            <TableView fx:id="tableView" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn fx:id="C1" prefWidth="112.0" text="Id" />
+                <TableColumn fx:id="C2" prefWidth="96.0" text="Student" />
+                  <TableColumn fx:id="C3" prefWidth="75.0" text="Course" />
+                  <TableColumn fx:id="C4" prefWidth="55.0" text="Grade" />
+                  <TableColumn fx:id="C5" prefWidth="96.0" text="Class" />
+                  <TableColumn fx:id="C6" prefWidth="92.0" text="Room" />
+              </columns>
+            </TableView>
+         </center>
+         <top>
+            <ToolBar prefHeight="40.0" prefWidth="867.0" BorderPane.alignment="CENTER">
+              <items>
+                <Button fx:id="New" mnemonicParsing="false" text="New" />
+                  <Button fx:id="Edit" mnemonicParsing="false" text="Edit" />
+                  <Button fx:id="Delete" mnemonicParsing="false" text="Delete" />
+              </items>
+            </ToolBar>
+         </top>
+         <bottom>
+            <ToolBar prefHeight="43.0" prefWidth="867.0">
+              <items>
+                <Button fx:id="generateReport" mnemonicParsing="false" text="Generate Report" />
+              </items>
+               <padding>
+                  <Insets left="700.0" />
+               </padding>
+            </ToolBar>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>
