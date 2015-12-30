@@ -21,8 +21,8 @@ import java.sql.{Connection, DriverManager, ResultSet, Statement}
 
 
 /**
- * Shows a way to use a JavaFX TableView with Scala
- */
+  * Shows a way to use a JavaFX TableView with Scala
+  */
 object CoursewareApp {
   def main(args: Array[String]) {
     Application.launch(classOf[CoursewareApp], args: _*)
@@ -30,8 +30,8 @@ object CoursewareApp {
 }
 
 /**
- * Setup for the javafx app
- */
+  * Setup for the javafx app
+  */
 class CoursewareApp extends javafx.application.Application {
 
   val loader = new FXMLLoader(getClass.getResource("/fhj/swengb/courseware/Courseware.fxml"))
@@ -44,46 +44,6 @@ class CoursewareApp extends javafx.application.Application {
       stage.show()
     } catch {
       case NonFatal(e) => e.printStackTrace()
-    }
-
-}
-
-/**
- * domain object
- */
-case class Student(id: Int, name: String)
-
-/**
- * domain object, but usable with javafx
- */
-class MutableStudent {
-
-  val idProperty: SimpleIntegerProperty = new SimpleIntegerProperty()
-  val nameProperty: SimpleStringProperty = new SimpleStringProperty()
-
-  def setId(id: Int) = idProperty.set(id)
-
-  def setName(name: String) = nameProperty.set(name)
-}
-
-/**
- * companion object to get a better initialisation story
- */
-object MutableStudent {
-
-  def apply(s: Student): MutableStudent = {
-    val ms = new MutableStudent
-    ms.setId(s.id)
-    ms.setName(s.name)
-    ms
-  }
-}
-
-object DataSource {
-
-  val data =
-    (1 to 29) map {
-      case i => Student(i, "Name")
     }
 
 }
@@ -119,25 +79,19 @@ class CoursewareAppController extends Initializable{
   @FXML var tableView: TableView[MutableStudent] = _
   @FXML var C1: StudentTC[Int] = _
   @FXML var C2: StudentTC[String] = _
+  @FXML var C3: StudentTC[String] = _
 
-  val mutableStudents = mkObservableList(DataSource.data.map(MutableStudent(_)))
-
-  /**
-   * provide a table column and a generator function for the value to put into
-   * the column.
-   *
-   * @tparam T the type which is contained in the property
-   * @return
-   */
   def initTableViewColumn[T]: (StudentTC[T], (MutableStudent) => Any) => Unit =
     initTableViewColumnCellValueFactory[MutableStudent, T]
 
   override def initialize(location: URL, resources: ResourceBundle): Unit = {
 
+    val mutableStudents = mkObservableList(for(student <- StudentData.asMap) yield MutableStudent(student._2))
     tableView.setItems(mutableStudents)
 
-    initTableViewColumn[Int](C1, _.idProperty)
-    initTableViewColumn[String](C2, _.nameProperty)
+    initTableViewColumn[Int](C1, _.pID)
+    initTableViewColumn[String](C2, _.pFirstname)
+    initTableViewColumn[String](C3, _.pLastname)
 
   }
 
