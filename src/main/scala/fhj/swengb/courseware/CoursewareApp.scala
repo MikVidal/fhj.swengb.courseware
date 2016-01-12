@@ -20,6 +20,7 @@ import scala.util.control.NonFatal
 import java.sql.{Connection, DriverManager, ResultSet, Statement}
 
 
+
 /**
   * Shows a way to use a JavaFX TableView with Scala
   */
