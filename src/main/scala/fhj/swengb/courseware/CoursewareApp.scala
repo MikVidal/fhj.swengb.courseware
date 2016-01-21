@@ -51,7 +51,7 @@ class CoursewareApp extends javafx.application.Application {
 
 object JfxUtils {
 
-  type TCDF[S, T] = TableColumn.CellDataFeatures[S, T]
+   type TCDF[S, T] = TableColumn.CellDataFeatures[S, T]
 
   import JavaConversions._
 

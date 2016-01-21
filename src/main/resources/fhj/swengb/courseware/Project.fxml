@@ -12,11 +12,9 @@
             <TableView fx:id="tableView" BorderPane.alignment="CENTER">
               <columns>
                 <TableColumn fx:id="C1" prefWidth="50.0" text="ID" />
-                <TableColumn fx:id="C2" prefWidth="164.0" text="firstname" />
-                <TableColumn fx:id="C3" prefWidth="213.0" text="lastname" />
-                  <TableColumn fx:id="C31" prefWidth="164.0" text="email" />
-                  <TableColumn fx:id="C32" minWidth="0.0" prefWidth="129.0" text="birthday" />
-                  <TableColumn fx:id="C321" minWidth="0.0" prefWidth="143.0" text="phone" />
+                <TableColumn fx:id="C2" prefWidth="164.0" text="name" />
+                  <TableColumn fx:id="C21" prefWidth="164.0" text="begindate" />
+                  <TableColumn fx:id="C211" prefWidth="164.0" text="deadline" />
                 <!--<TableColumn fx:id="C4" prefWidth="55.0" text="Grade" />
                 <TableColumn fx:id="C5" prefWidth="96.0" text="Class" />
                 <TableColumn fx:id="C6" prefWidth="92.0" text="Room" />-->

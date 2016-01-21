@@ -11,7 +11,7 @@ object DB {
   }
 
   val repopath:String = new java.io.File(".").getCanonicalPath
-  val db: String = repopath  + "/fhj.swengb.courseware/src/main/resources/fhj/swengb/courseware/swengb.sqlite"
+  val db: String = repopath  + "/fhj.swengb.coursxeware/src/main/resources/fhj/swengb/courseware/swengb.sqlite"
 
   lazy val maybeConnection: Try[Connection] = Try(DriverManager.getConnection("jdbc:sqlite:" + db))
 
